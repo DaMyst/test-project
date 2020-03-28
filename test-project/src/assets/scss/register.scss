@@ -1,0 +1,30 @@
+@import "_config.scss";
+
+.register-body {
+  width: 100%;
+  .register-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 450px;
+    height: 450px;
+    margin: 80px auto 0 auto;
+    border: 1px solid #ccc;
+    padding: 30px 50px 30px 50px;
+
+    .register-title {
+      text-align: center;
+      padding: 10px 30px 10px 30px;
+    }
+    .register-form {
+      padding: 10px 30px 10px 30px;
+    }
+  }
+  img {
+    height: 100px;
+}
+}
+
+.register-button {
+  width: 100%;
+}

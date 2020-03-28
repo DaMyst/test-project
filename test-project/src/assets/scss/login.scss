@@ -1,0 +1,30 @@
+@import "_config.scss";
+
+.login-body {
+  width: 100%;
+  .login-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 450px;
+    height: 450px;
+    margin: 80px auto 0 auto;
+    border: 1px solid #ccc;
+    padding: 30px 50px 30px 50px;
+
+    .login-title {
+      text-align: center;
+      padding: 10px 30px 10px 30px;
+    }
+    .login-form {
+      padding: 10px 30px 10px 30px;
+    }
+  }
+  img {
+    height: 100px;
+}
+}
+
+.login-button {
+  width: 100%;
+}

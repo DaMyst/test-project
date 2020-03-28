@@ -1,23 +1,29 @@
 import React from 'react';
-// import {
-//     Route,
-//     Switch
-// } from 'react-router-dom';
+import {
+    Route,
+    Switch
+} from 'react-router-dom';
 //components
-// import Main from './mainPage/main'
-// import Login from './loginPage/login'
-// import Register from './registerPage/register'
+import Main from './mainPage/main'
+import Login from './loginPage/login'
+import Register from './registerPage/register'
+// import Content from '../contentComponent/mainPage/main';
 
 import ConfigRoute from '../../../../routing/router-config';
 import routes from '../../../../routing/routing-path';
-const Content = ({ Home }) => {
+
+const Content = ({ match }) => {
+    console.log('match', match)
     return (
 
         <div className="container-fluid">
-            {routes.map((route) => (
-                    <ConfigRoute key={route.path} {...route} />
-                ))}
-                Data
+            <Switch>
+                <Route exact path='/home' component={Main} />
+                <Route path='/home/login' component={Login} />
+                <Route path='/home/register' component={Register} />
+
+
+            </Switch>
         </div >
 
     );

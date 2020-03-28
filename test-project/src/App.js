@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 //components
-// import Home from './components/pages/homePage/home';
+import Home from './components/pages/homePage/home';
 // import DashboardHome from './components/pages/dashboard/home/dashboardHome';
 // import Main from './components/pages/homePage/contentComponent/mainPage/main'
 // import Login from './components/pages/homePage/contentComponent/loginPage/login'
 // import Register from './components/pages/homePage/contentComponent/registerPage/register'
-
+import Pages from './components/pages/pages';
 //routes
-import ConfigRoute from './routing/router-config';
-import routes from './routing/routing-path';
+// import ConfigRoute from './routing/router-config';
+// import routes from './routing/routing-path';
 
 
 
 
 
-// import {
-//   Route,
-// } from 'react-router-dom';
+import {
+  Route,
+  Link
+} from 'react-router-dom';
 
 //includes
 import './assets/css/default.min.css'
@@ -26,7 +27,7 @@ import './assets/css/default.min.css'
 //     path: '/home',
 //     component: Home,
 //     routes: [
-      
+
 //       {
 //         path: '/home',
 //         component: Main
@@ -54,7 +55,13 @@ import './assets/css/default.min.css'
 //   <Route path={route.path} render={(props) => (
 //     <route.component {...props} rooute={route.routes} />
 //   )} />
-// );
+// );\
+
+const Child = ({ match }) => console.log('match', match) || (
+  <div>
+    <h3>:id</h3>
+  </div>
+)
 class App extends Component {
   state = {
     contacts: []
@@ -67,13 +74,14 @@ class App extends Component {
     return (
       <div className="App">
         {/* <div>{routes.</div> */}
-        {/* <Route exact path='/home'>
-          <Home />
-        </Route> */}
+     
+        <Pages></Pages>
+        {/* <Route path='/home' component={Home} /> */}
+
         {/* <Route exact path='/dashboard' component={DashboardHome}></Route> */}
-        {routes.map((route) => (
+        {/* {routes.map((route) => (
           <ConfigRoute key={route.path} {...route} />
-        ))}
+        ))} */}
 
       </div>
 

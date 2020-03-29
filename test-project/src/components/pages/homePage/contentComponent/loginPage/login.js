@@ -10,30 +10,35 @@ import {
 
 class Login extends Component {
     submit = data => {
-        console.log(data);
         this.loginData(data)
     }
     state = {
         redirectTo: false
     }
 
-    getUserData(data) {
-        console.log(data);
-    }
+    // getUserData(data) {
+    //     console.log(data);
+    // }
 
     loginData(data) {
+        console.log('data');
         fetch('http://localhost:5000/get/accounts/' + data.email)
             .then(res => res.json())
             .then((logindata) => {
                 if (logindata[0].password != null) {
                     if (logindata[0].password === data.password) {
-                        this.setState({ login: logindata, redirectTo: true })
+                        this.setState({ login: logindata })
                         const { login } = this.state;
                         if (login != null) {
                             const { password } = login[0];
                             if (data.password === password) {
+                                console.log(login[0]);
                                 localStorage.setItem('userData', JSON.stringify(login[0]));
+                                this.setState({ redirectTo: true })
+
                             }
+                        } else {
+                            console.log()
                         }
                     } else {
 
@@ -41,7 +46,7 @@ class Login extends Component {
                     }
                 }
             })
-        .catch()
+            .catch()
     }
     render() {
         if (this.state.redirectTo != null) {
@@ -56,7 +61,7 @@ class Login extends Component {
                         <div className="login-content">
                             <div className="login-title">
                                 {/* <img src={Logo} alt="login" /> */}
-                                <h3 className="icon-logo"><FaUserShield  /></h3>
+                                <h3 className="icon-logo"><FaUserShield /></h3>
                                 <h1>Login Page</h1>
                             </div>
                             <div className="login-form">
@@ -74,7 +79,7 @@ class Login extends Component {
                     <div className="login-content">
                         <div className="login-title">
                             {/* <img src={Logo} alt="login" /> */}
-                            <h3 className="icon-logo"><FaUserShield  /></h3>
+                            <h3 className="icon-logo"><FaUserShield /></h3>
                             <h1>Login Page</h1>
                         </div>
                         <div className="login-form">

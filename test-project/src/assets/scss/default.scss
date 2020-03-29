@@ -3,6 +3,7 @@
 .logo {
   color: white;
 }
+
 header {
   position: relative;
   display: block;
@@ -10,38 +11,50 @@ header {
   background: $black;
   color: $white;
   height: 90px;
+}
 
+nav,
+nav ul,
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  display: flex;
+  align-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  width: 100%;
+  background: $black;
+  color: $white;
+  height: 90px;
+  // position: absolute;
+  // top: 50%;
+  // right: 15px;
+  // @include translateY(-50%);
   .logo {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    @include translateY(-50%);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
-  nav,
-  nav ul,
-  nav ul li {
-    margin: 0;
-    padding: 0;
+  ul {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
-  nav {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    @include translateY(-50%);
-
-    ul li {
-      list-style-type: none;
-      display: inline-block;
-      margin-right: 10px;
-      &.last {
-          margin: 0;
-      }
-      a {
-          font-style: 19px;
-          line-height: normal;
-          color: $white;
-      }
+  ul li {
+    list-style-type: none;
+    display: inline-block;
+    align-content: space-around;
+    &.last {
+        margin: 0;
+    }
+    a {
+        font-style: 19px;
+        line-height: normal;
+        color: $white;
     }
   }
 }

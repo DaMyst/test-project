@@ -19,9 +19,9 @@ class Login extends Component {
     getUserData(data) {
         console.log(data);
     }
+
     loginData(data) {
-        console.log(data);
-        fetch('http://localhost:3000/get/accounts/' + data.email)
+        fetch('http://localhost:5000/get/accounts/' + data.email)
             .then(res => res.json())
             .then((logindata) => {
                 if (logindata[0].password != null) {
@@ -32,18 +32,15 @@ class Login extends Component {
                             const { password } = login[0];
                             if (data.password === password) {
                                 localStorage.setItem('userData', JSON.stringify(login[0]));
-
                             }
-
                         }
                     } else {
 
                         console.log('wrong password');
                     }
                 }
-
             })
-        // .catch()
+        .catch()
     }
     render() {
         if (this.state.redirectTo != null) {

@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 //components
 import Pages from './components/pages/pages';
 
-
-
-
-
 import {
   Redirect
 } from 'react-router-dom';
@@ -26,14 +22,9 @@ class App extends Component {
 
     return (
       <div className="App">
-
         {userData === null ? <Redirect to='/home' /> : <Redirect to='/dashboard' />}
         <Pages></Pages>
-
-
       </div>
-
-
     );
   }
 

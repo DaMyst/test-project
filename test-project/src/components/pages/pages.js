@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //components
 import Home from './homePage/home';
-import Dashboard from './dashboard/home/dashboardHome';
+import Dashboard from './dashboard/dashboard';
 // import DashboardHome from './components/pages/dashboard/home/dashboardHome';
 // import Main from './components/pages/homePage/contentComponent/mainPage/main'
 // import Login from './components/pages/homePage/contentComponent/loginPage/login'
@@ -17,7 +17,6 @@ import Dashboard from './dashboard/home/dashboardHome';
 
 import {
     Route,
-    Link,
     Switch
 } from 'react-router-dom';
 
@@ -38,8 +37,9 @@ class Pages extends Component {
         return (
             <div className="App">
                 <Switch>
+
                     <Route path='/home' component={Home} />
-                    <Route path='/dashboard' component={Dashboard}/>
+                    <Route path='/dashboard' component={Dashboard} />
                 </Switch>
             </div>
 

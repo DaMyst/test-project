@@ -12,10 +12,13 @@ class Login extends Component {
         console.log(data);
         this.loginData(data)
     }
-   state = {
-    redirectTo: false
+    state = {
+        redirectTo: false
     }
 
+    getUserData(data) {
+        console.log(data);
+    }
     loginData(data) {
         console.log(data);
         fetch('http://localhost:3000/get/accounts/' + data.email)
@@ -28,7 +31,8 @@ class Login extends Component {
                         if (login != null) {
                             const { password } = login[0];
                             if (data.password === password) {
-                                console.log('password correct')
+                                localStorage.setItem('userData', JSON.stringify(login[0]));
+
                             }
 
                         }

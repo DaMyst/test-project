@@ -11,6 +11,7 @@ import Content from './contentComponent/content';
 
 class Home extends Component {
     render() {
+        // localStorage.removeItem('userData');
         return (
             <div className="wrap">
                 <Header />

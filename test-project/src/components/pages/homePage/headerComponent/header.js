@@ -1,17 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-    Route,
     Link
 } from 'react-router-dom';
-import Content from '../contentComponent/content';
 
 
-//routes
-const Child = ({ match }) => console.log('match', match) || (
-    <div>
-        <h3>:id{}</h3>
-    </div>
-)
+
+
 
 const Header = ({ match }) => {
 

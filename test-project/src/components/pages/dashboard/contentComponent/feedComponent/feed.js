@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 
 
-class DashboardHome extends Component {
+class DashboardFeed extends Component {
     render() {
         return (
             <div className="wrap">
-                home
+                feed
             </div>
 
         );
@@ -14,4 +14,4 @@ class DashboardHome extends Component {
 
 }
 
-export default DashboardHome;
+export default DashboardFeed;

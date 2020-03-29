@@ -4,7 +4,7 @@
 // } from 'react-router-dom';
 //components
 import Home from '../components/pages/homePage/home';
-import DashboardHome from '../components/pages/dashboard/home/dashboardHome';
+import DashboardHome from '../components/pages/dashboard/contentComponent/homeComponent/dashboardHome';
 import Main from '../components/pages/homePage/contentComponent/mainPage/main'
 import Login from '../components/pages/homePage/contentComponent/loginPage/login'
 import Register from '../components/pages/homePage/contentComponent/registerPage/register'

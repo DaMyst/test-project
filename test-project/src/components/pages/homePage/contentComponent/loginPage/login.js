@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import LoginForm from '../../../../forms/LoginForm';
 import Logo from '../../../../../assets/images/login-logo.jpg';
 import '../../../../../assets/css/login.min.css'
+import { FaUserShield } from 'react-icons/fa';
 import {
     Redirect
 } from 'react-router-dom';
@@ -54,7 +55,8 @@ class Login extends Component {
                     <div className="login-body">
                         <div className="login-content">
                             <div className="login-title">
-                                <img src={Logo} alt="login" />
+                                {/* <img src={Logo} alt="login" /> */}
+                                <h3 className="icon-logo"><FaUserShield  /></h3>
                                 <h1>Login Page</h1>
                             </div>
                             <div className="login-form">
@@ -71,7 +73,8 @@ class Login extends Component {
                 <div className="login-body">
                     <div className="login-content">
                         <div className="login-title">
-                            <img src={Logo} alt="login" />
+                            {/* <img src={Logo} alt="login" /> */}
+                            <h3 className="icon-logo"><FaUserShield  /></h3>
                             <h1>Login Page</h1>
                         </div>
                         <div className="login-form">

@@ -2,6 +2,10 @@
 
 .login-body {
   width: 100%;
+  .icon-logo {
+    height: 50px;
+    width: 50px;
+  }
   .login-content {
     display: flex;
     flex-direction: column;
@@ -13,11 +17,48 @@
     padding: 30px 50px 30px 50px;
 
     .login-title {
-      text-align: center;
-      padding: 10px 30px 10px 30px;
+      // text-align: center;
+      // padding: 10px 30px 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .icon-logo{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+          height: 5vh;
+          width: 5vh;
+          fill: #686767;
+          &:hover{
+            fill: #3a3a3a;
+          }
+        }
+      }
     }
     .login-form {
       padding: 10px 30px 10px 30px;
+      position: relative;
+      .field {
+        position: relative;
+        .toogle-show-password {
+          position: absolute;
+          right: 10px;
+          bottom: 5px;
+          color: #c9c9c9;
+          &:hover {
+            color: #686767;
+            cursor: pointer;
+          }
+          svg{
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
     }
   }
   img {

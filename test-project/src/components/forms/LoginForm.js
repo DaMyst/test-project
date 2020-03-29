@@ -3,17 +3,27 @@ import PropTypes from 'prop-types';
 import { Form, Button } from 'semantic-ui-react';
 import Validator from 'validator';
 import InLineError from '../messages/InLineError';
+import { FaRegEyeSlash, FaRegEye } from 'react-icons/fa';
 class LoginForm extends React.Component {
     state = {
         data: {
             email: '',
             password: ''
         },
+        hidden: true,
+        fontIcon: <FaRegEyeSlash />,
         loading: false,
         errors: {}
     };
 
- 
+    toggleShowPassword() {
+        this.setState(state => ({
+            hidden: !state.hidden,
+            fontIcon: !state.hidden? <FaRegEyeSlash /> : <FaRegEye />
+        }));
+    }
+
+
     onSubmit = () => {
         const errors = this.validate(this.state.data);
         this.setState({ errors })
@@ -49,15 +59,15 @@ class LoginForm extends React.Component {
                 <Form.Field error={!!errors.password}>
                     <label htmlFor="password">Password</label>
                     <input
-                        type="password"
+                        type={this.state.hidden ? "password" : "text"}
                         id="password"
                         name="password"
                         placeholder="Make it Secure"
                         value={data.password}
                         onChange={this.onChange}>
                     </input>
+                    <label className="toogle-show-password" onClick={() => this.toggleShowPassword()}>{this.state.fontIcon}</label>
                     {errors.password && <InLineError text={errors.password} />}
-
                 </Form.Field>
                 <Button className="login-button" primary>Login</Button>
             </Form>
